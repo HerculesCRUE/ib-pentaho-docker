@@ -18,6 +18,12 @@ Generació de imagen de Docker para Pentaho Data Integration versión 9.0.
 | `REPOSITORY_DESCRIPTION`    | Descripción del repositorio                                 | File repository                               |
 | `REPOSITORY_BASE_DIRECTORY` | Directorio base del repositorio                             | /pentaho-di/repositories/my_pdi_repo/project/ |
 
+## Ejecución
+
+Para probar la ejecución de un Job, por ejemplo llamado `main`, se precisa ejecudtar la siguiente URL:
+
+    http://localhost:8080/kettle/runJob/?job=main
+
 ## Forks
 Otros repos con configuración de diferentes versiones de PDI
 
