@@ -1,0 +1,18 @@
+version: '3.7'
+
+services:
+
+  pdi:
+    image: pdi:2
+    restart: always
+    ports:
+      - "8080:8080"
+    volumes: 
+      - ./repositories:/pentaho-di/repositories
+    environment: 
+      - CARTE_NAME=master1
+      - CARTE_HOSTNAME=localhost
+      - CARTE_USER=asioetl
+      - CARTE_PASSWORD=asioetl
+      - REPOSITORY_NAME=ASIO-UM
+      - REPOSITORY_BASE_DIRECTORY=/pentaho-di/repositories/asio-um/project

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<repositories>
+  <repository>
+    <name>REPOSITORY_NAME</name>
+    <read_only>REPOSITORY_READ_ONLY</read_only>
+    <id>REPOSITORY_ID</id>
+    <hides_hidden_files>REPOSITORY_HIDDEN_FILES</hides_hidden_files>
+    <description>REPOSITORY_DESCRIPTION</description>
+    <base_directory>REPOSITORY_BASE_DIRECTORY</base_directory>
+    <is_default>true</is_default>
+  </repository>
+</repositories>
