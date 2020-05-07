@@ -3,7 +3,7 @@ version: '3.7'
 services:
 
   pdi:
-    image: pdi:2
+    image: umansioacr.azurecr.io/etl/pdi:9.0
     restart: always
     ports:
       - "8080:8080"
