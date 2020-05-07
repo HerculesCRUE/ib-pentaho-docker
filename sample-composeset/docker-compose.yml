@@ -9,6 +9,7 @@ services:
       - "8080:8080"
     volumes: 
       - ./repositories:/pentaho-di/repositories
+      - ./kettle.properties:/pentaho-di/.kettle/kettle.properties
     environment: 
       - CARTE_NAME=master1
       - CARTE_HOSTNAME=localhost
