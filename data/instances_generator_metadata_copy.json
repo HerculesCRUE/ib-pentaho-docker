@@ -1,0 +1,34 @@
+[
+  {
+    "class": "university",
+    "language": "en-EN",
+    "instances": 3,
+    "properties" : [
+      "name", "description"
+    ],
+    "child": [
+      {
+        "parentProperty": "has-groups",
+        "childProperty": "has-university",
+        "class": "group",
+        "language": "en-EN",
+        "instances": 3,
+        "properties" : [
+          "name", "description"
+        ],
+        "child": [
+          {
+            "parentProperty": "has-researchers",
+            "childProperty": "has-group",
+            "class": "researcher",
+            "language": "en-EN",
+            "instances": 5,
+            "properties" : [
+              "name","surname","address"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

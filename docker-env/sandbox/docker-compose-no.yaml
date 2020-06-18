@@ -1,0 +1,78 @@
+version: "3"
+
+services:
+  fuseki:
+    build: ./fuseki-tdb/
+    container_name: jena-fuseki
+    restart: always
+    environment:
+      - ADMIN_PASSWORD=pw123
+    ports:
+      - "3030:3030"
+    volumes:
+      - fuseki-data:/fuseki/databases/trellis
+      - fuseki-backup:/fuseki/databases/backups
+      #- ./fuseki-conf/config.ttl:/fuseki/config.ttl
+      #- ./fuseki-conf/trellis.ttl:/fuseki/trellis.ttl
+      #- ./fuseki-conf/shiro.ini:/fuseki/shiro.ttl
+      #- ./fuseki-conf/log4j.properties:/fuseki/log4j.properties
+    networks:
+      - fuseki
+  db:
+    image: mariadb:10.3
+    container_name: mariadb
+    restart: unless-stopped
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+    command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci
+    environment:
+      # MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_ROOT_PASSWORD: root
+      # CONFIG - Change the default values below (should match values passed to wikibase)
+      MYSQL_DATABASE: 'app'
+      MYSQL_USER: 'app'
+      MYSQL_PASSWORD: 'sqlpass'
+    networks:
+      - db
+  uris-factory:
+    build: ./uris-factory
+    container_name: uris-factory
+    environment:
+      - APP_PERSISTENCE_DATASOURCE_DRIVER-CLASS-NAME=org.mariadb.jdbc.Driver
+      - APP_PERSISTENCE_DATASOURCE_USERNAME=app
+      - APP_PERSISTENCE_DATASOURCE_PASSWORD=sqlpass
+      - APP_PERSISTENCE_DATASOURCE_URL=jdbc:mariadb://db/app?ssl=false
+    ports:
+      - "9326:9326"
+    links:
+      - "db:db"
+    depends_on:
+      - db
+    networks:
+      - db
+  trellis:
+    build: ./trellis
+    container_name: trellis
+    ports:
+      - "8080:8080"
+    links:
+      - "fuseki:fuseki"
+    depends_on:
+      - fuseki
+    volumes:
+      - trellis-data:/opt/trellis/data
+      - trellis-log:/opt/trellis/log
+    networks:
+      - fuseki
+volumes:
+  fuseki-data:
+  fuseki-backup:
+  mysql-data:
+  trellis-data:
+  trellis-log:
+
+networks:
+  db:
+  fuseki:
