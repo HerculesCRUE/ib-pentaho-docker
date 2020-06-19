@@ -31,10 +31,10 @@ services:
       - "9326:9326"
     links:
       - "db-sandbox:db-sandbox"
-      # - "trellis-sandbox:trellis-sandbox"
+      - "trellis-sandbox:trellis-sandbox"
     depends_on:
       - db-sandbox
-      # - trellis-sandbox
+      - trellis-sandbox
     networks:
       - sandbox-net
   fuseki-sandbox:

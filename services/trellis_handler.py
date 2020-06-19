@@ -29,8 +29,12 @@ class TrellisHandler:
         }
         uri = self.get_base_uri() + parent_uri if parent_uri is not None else self.get_base_uri()
         response = requests.request("POST", uri, headers=headers, data=payload)
-        location = response.headers['location']
-        return location
+        try:
+            location = response.headers['location']
+            return location
+        except:
+            print(response)
+            return None
 
     def create_property(self,parent_uri,prop):
         payload = """
@@ -53,23 +57,7 @@ class TrellisHandler:
         return location
 
     def create_instance(self,instance,instance_map):
-        payload2 = "@prefix dc: <http://purl.org/dc/terms/>.\n@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.\n@prefix p: <http://hercules.org/um/en-EN/res/>.\n\n<>\na rdf:Property ;\np:name 'name';\ndc:title 'Instance %s.'" % instance.id
         payload1 = instance.generate_turtle_rdf(instance_map)
-        # payload = """@prefix dc: <http://purl.org/dc/terms/>.
-        #             @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
-        #             @prefix cu: <http://hercules.org/um/en-EN/res/>.
-        #
-        #             <>
-        #                 a rdf:Property ;
-        #                 a dc:title 'Instance 1. of class university."""
-        # payload = "@prefix dc: <http://purl.org/dc/terms/>.\n"
-        # payload += "@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.\n"
-        # payload += "@prefix cu: <http://hercules.org/um/en-EN/res/>.\n\n"
-        # payload += "<>.\n"
-        # payload += "\ta rdf:Property ;\n"
-        # for p in instance.properties:
-        #     payload += "\tcu:%s '%s';\n" % (p,instance.properties[p])
-        # payload += "\ta dc:title 'Instance %s. of class %s.\n" % (instance.id,instance.className)
 
         headers = {
             'Host': 'localhost:8080',
@@ -81,3 +69,21 @@ class TrellisHandler:
         location = response.headers['location']
         return location
 
+    def get_data(self,local_uri):
+        headers = {
+            'Accept': 'text/turtle'
+        }
+        response = requests.request("GET", local_uri, headers=headers)
+        return response.headers,response.text.encode('utf8')
+
+    def get_audit_metadata(self,local_uri):
+        headers = {
+            'Accept': 'text/turtle',
+            'Prefer': 'return=representation; include="http://www.trellisldp.org/ns/trellis#PreferAudit"'
+        }
+        response = requests.request("GET", local_uri, headers=headers)
+        return response.headers,response.text.encode('utf8')
+
+    def get_mementos_metadata(self,local_uri):
+        response = requests.request("GET", local_uri+'?ext=timemap', headers=headers)
+        return response.headers,response.text.encode('utf8')

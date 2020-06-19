@@ -34,10 +34,10 @@ class DataGenerator:
         self.__insert_all_data()
         print(os.getcwd())
         #file = open('%s\data\public_uris.json'%(os.getcwd()), 'w+')
-        file = open('./data/public_uris.json', 'w+')
-        file.write(json.dumps(self.public_uris, indent=2))
-        file.flush()
-        file.close()
+        with open('./data/public_uris.json', 'w+') as f1:
+            f1.write(json.dumps(self.public_uris, indent=2))
+        with open('./data/private_uris.json', 'w+') as f2:
+            f2.write(json.dumps(self.private_uris, indent=2))
 
         #json.dump(self.private_uris, outfile)
 
@@ -85,8 +85,7 @@ class DataGenerator:
 
     def __insert_all_instances(self):
         for inst in self.instances:
-            location = inst.canonicalURIS['canonicalLanguageURI']
-            self.th.create_instance(inst,self.instancesMap)
+            location = self.th.create_instance(inst,self.instancesMap)
             mapped_uris = self.uf.do_link_canonical_instance_to_local(inst, location, 'trellis')
             self.public_uris['instances'][mapped_uris['canonicalURILanguageStr']] = mapped_uris['localUri']
             self.private_uris['instances'][mapped_uris['localUri']] = mapped_uris['canonicalURILanguageStr']

@@ -3,3 +3,5 @@ cryptography
 numpy
 pandas
 more-itertools
+rdflib
+validators
