@@ -5,6 +5,7 @@ from services.uris_factory_handler import URISFactoryHandler
 from services.fair_evaluator import FairEvaluator
 import sys
 import validators
+import fairviz
 
 def main():
 
@@ -23,6 +24,9 @@ def main():
         dc = DataGenerator(open('./data/instances_generator_metadata.json'),th,uf)
         dc.generate_sintetic_data()
 
+    if '-v' in sys.argv[1:] or '-V' in sys.argv[1:]:
+        print('Build visualization....')
+        fairviz.main()
     fe = FairEvaluator(th,uf)
     fe.evaluate_fair()
 

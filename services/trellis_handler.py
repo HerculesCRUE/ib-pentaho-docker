@@ -85,5 +85,12 @@ class TrellisHandler:
         return response.headers,response.text.encode('utf8')
 
     def get_mementos_metadata(self,local_uri):
+        headers = {
+            'Accept': 'text/turtle'
+        }
         response = requests.request("GET", local_uri+'?ext=timemap', headers=headers)
         return response.headers,response.text.encode('utf8')
+
+    def delete_resource(self,local_uri):
+        response = requests.request("DELETE", local_uri)
+        return response.headers, response.text.encode('utf8')
