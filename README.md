@@ -1,8 +1,8 @@
-
+![](./images/logos_feder.png)
 
 | Entregable     | Métricas FAIR                                                |
 | -------------- | ------------------------------------------------------------ |
-| Fecha          | 25/05/2020                                                   |
+| Fecha          | 19/06/2020                                                   |
 | Proyecto       | [ASIO](https://www.um.es/web/hercules/proyectos/asio) (Arquitectura Semántica e Infraestructura Ontológica) en el marco de la iniciativa [Hércules](https://www.um.es/web/hercules/) para la Semántica de Datos de Investigación de Universidades que forma parte de [CRUE-TIC](http://www.crue.org/SitePages/ProyectoHercules.aspx) |
 | Módulo         | Infraestructura Ontológica                                   |
 | Tipo           | Software y resultados                                        |
@@ -29,11 +29,17 @@ Sólo en algunos casos, dado que el proyecto aún se encuenta en un estado parci
 
 En los siguientes apartados se detalla la evaluación de cada uno de los indicadores.
 
+### Control de versiones
+
+**Versión de la evaluación**: 1.0
+
+**Sello de tiempo:** 19/06/2020 12:43:23.000
+
 ### FINDABLE
 
 A continuación se describen los criterios de evaluación y resultados de los 7 indicadores FINDABLE, todos ellos de prioridad *essential*. 
 
-Todos los criterios se cumplen, por lo que la evaluación de este área sería de nivel 5
+Casi todos los criterios se cumplen, por lo que la evaluación de este área sería de nivel 5 en momento en que el criterio RDA-F2-01M quede totalmente implementado.
 
 #### RDA-F1-01M - Metadata is identified by a persistent identifier
 
@@ -81,9 +87,9 @@ Todos los datos y metadatos están identificados mediante URIs PURL ([http://pur
 
 **Prioridad RDA**: Essential
 
-**Evaluación**: 4 – fully implemented
+**Evaluación**: 3 – in implementation phase
 
-Se proveen metadatos tanto a nivel de ontología como de los datos importados (OWL/SKOS, Wikibase, Trellis y Memento).
+Se proveen metadatos tanto a nivel de ontología como de los datos importados (OWL/SKOS, Wikibase, Trellis y Memento), si bien es necesario mejorar aspectos menores que mejoren la capacidad de descubrimiento.
 
 #### RDA-F3-01M - Metadata includes the identifier for the data
 
@@ -109,7 +115,7 @@ Los datos y metadatos están publicados mediante un grafo linked data 5 estrella
 
 A continuación se describen los criterios de evaluación y resultados de los 12 indicadores ACCESIBLE, de los cuales son 8 *essential*, 3 *important* y 1 *useful*. 
 
-Se cumplen todos menos 1 indicador de tipo *important*, por lo que la evaluación de este área sería de nivel 3, la cual aumentaría a nivel 5 a la finalización del hito 2, tras resolver dicho indicador.
+Se cumplen todos los indicadores, por lo que el nivel de este área es 5.
 
 #### RDA-A1-01M - Metadata contains information to enable the user to get access to the data
 
@@ -117,9 +123,9 @@ Se cumplen todos menos 1 indicador de tipo *important*, por lo que la evaluació
 
 **Prioridad RDA**: Important
 
-**Evaluación**: 2 – under consideration or in planning phase
+**Evaluación**: 4 – fully implemented
 
-Actualmente no se describe a nivel de metadatos el mecanismo de autenticación y autorización para poder tener acceso a los datos, si bien está previsto incluirlo a corto plazo.
+Se describe a nivel de metadatos el mecanismo de autenticación y autorización para poder tener acceso a los datos.
 
 #### RDA-A1-02M - Metadata can be accessed manually (i.e. with human intervention)
 
@@ -235,7 +241,7 @@ La combinación de Trellis y Memento permite llevar un registro histórico de mo
 
 A continuación se describen los criterios de evaluación y resultados de los 12 indicadores INTEROPERABLE, de los cuales son 7 *important*, 5 *useful* y ninguno *essential*.
 
-Se cumplen todos menos 1 indicador de tipo *important* y 3 *useful*, por lo que la evaluación de este área sería de nivel 3, la cual aumentaría a nivel 5 a la finalización del hito 2, tras resolver dichos indicadores.
+Se cumplen todos menos 1 indicador de tipo *important* y 4 *useful*, por lo que la evaluación de este área sería de nivel 3, la cual aumentaría a nivel 5 a la finalización del hito 2, tras resolver dichos indicadores.
 
 #### RDA-I1-01M - Metadata uses knowledge representation expressed in standardised format
 
@@ -313,7 +319,7 @@ La ontología referencia otras ontologías, como por ejemplo [PROV-O](https://ww
 
 **Prioridad RDA**: Useful
 
-**Evaluación**: 4 – fully implemented
+**Evaluación**: 3 – in implementation phase
 
 Se referencian datos externos, como por ejemplo el uso de DOIs para enlazar documentos y artículos de investigación.
 
@@ -361,7 +367,7 @@ Se referencian datos externos, como por ejemplo el uso de DOIs para enlazar docu
 
 A continuación se describen los criterios de evaluación y resultados de los 10 indicadores REUSABLE, de los cuales son 5 *essential*, 4 *important y 1 useful*.
 
-Se cumplen todos menos 1 indicador de tipo *essential*, por lo que la evaluación de este área sería de nivel 0, la cual aumentaría a nivel 5 a la finalización del hito 2, tras resolver dicho indicador.
+Se cumplen todos los indicadores, por lo que la evaluación de este área sería de nivel 5.
 
 #### RDA-R1-01M - Plurality of accurate and relevant attributes are provided to allow reuse
 
@@ -369,11 +375,11 @@ Se cumplen todos menos 1 indicador de tipo *essential*, por lo que la evaluació
 
 **Prioridad RDA**: Essential
 
-**Evaluación**: 2 – under consideration or in planning phase
+**Evaluación**: 4 – fully implemented
 
 *The  indicator concerns the quantity but also the quality of metadata provided in  order to enhance data reusability. This indicator can be evaluated with the  help of standards registries such as the RDA-endorsed [FAIR Sharing](https://fairsharing.org/standards/?q=/format&selected_facets=type_exact:reporting%20guideline).*
 
-Se prevé cumplir este indicador mediante el mapeo de las áreas científicas y temáticas de la UNESCO que tiene publicadas la Universidad de Murcia (hito 2).
+Se prevé ampliar este indicador mediante el mapeo de las áreas científicas y temáticas de la UNESCO que tiene publicadas la Universidad de Murcia.
 
 #### RDA-R1.1-01M - Metadata includes information about the licence under which the data can be reused
 
