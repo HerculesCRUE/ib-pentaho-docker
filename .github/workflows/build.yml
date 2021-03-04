@@ -36,7 +36,7 @@ jobs:
         env:
           GITHUB_USER: ${{ secrets.PERSONAL_GITHUB_USER }}
           GITHUB_USER_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-        run: mvn -s ./.ci/settings.xml -B -U clean package
+        run: mvn -B -U clean package
       - name: Archive artifact
         uses: actions/upload-artifact@v2
         with:
