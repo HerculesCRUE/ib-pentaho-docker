@@ -18,13 +18,12 @@ REQ 5.1.7	| [`delta.feature`](../src/test/features/delta.feature) | Comunicació
 
 ## Reporte
 
-* [Cucumber Report](http://herc-iz-front-desa.atica.um.es:8070/api-exchange/cucumber/overview-features.html)
+* [Cucumber Report](https://reports.herculesasioizertis.desa.um.es/api-exchange/cucumber/overview-features.html)
 
 
 
 
 ## Anexo
-
 
 [Enlace a la documentación sobre requisitos funcionales](https://github.com/HerculesCRUE/ib-asio-docs-/blob/master/entregables_hito_1/12-An%C3%A1lisis/Requisitos/Documents/Requisitos%20funcionales.md)
 
