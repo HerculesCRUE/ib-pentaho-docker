@@ -4,13 +4,14 @@
 
 | Entregable     | Sistema de gestión entre Infraestructura Ontológica y Arquitectura Semántica |
 | -------------- | ------------------------------------------------------------ |
-| Fecha          | 17/12/2020                                                   |
+| Fecha          | 26/04/2020                                                   |
+| Revisado por   | Paloma Terán Pérez                                           |
 | Proyecto       | [ASIO](https://www.um.es/web/hercules/proyectos/asio) (Arquitectura Semántica e Infraestructura Ontológica) en el marco de la iniciativa [Hércules](https://www.um.es/web/hercules/) para la Semántica de Datos de Investigación de Universidades que forma parte de [CRUE-TIC](https://www.crue.org/proyecto/hercules/) |
 | Módulo         | Procesador de datos                                          |
 | Tipo           | Software                                                     |
 | Objetivo       | Sistema de gestión de datos del módulo de procesamiento para el proyecto Backend SGI (ASIO). |
-| Estado         | **10%** Pendiente de procesar información procedente de ficheros delta |
-| Próximos pasos | Implementación de ficheros delta.                            |
+| Estado         | **100%**                                                     |
+| Próximos pasos |                                                              |
 
 # ASIO - Sistema de gestión entre Infraestructura Ontológica y Arquitectura Semántica
 
@@ -82,7 +83,7 @@ No es necesario especificar la clase de inicio de la aplicación, ya que el fich
 
 Se incluyen los resultados del testing y cobertura en los siguientes enlaces:
 
-* [Testing](http://herc-iz-front-desa.atica.um.es:8070/api-exchange/surefire/surefire-report.html)
+* [Testing](https://reports.herculesasioizertis.desa.um.es/api-exchange/surefire/surefire-report.html)
 * [Cobertura](https://sonarcloud.io/component_measures?id=HerculesCRUE_ib-api-exchange&metric=coverage&view=list)
 * [Testing BDD](docs/testing.md)
 
